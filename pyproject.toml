@@ -1,29 +1,22 @@
-[tool.poetry]
+[project]
 name = "ads-danielfrg-com"
 version = "1.0.0"
-description = ""
-authors = ["Daniel Rodriguez <daniel@danielfrg.com>"]
+description = ''
+authors = [{ name = 'Daniel Rodriguez', email = 'daniel@danielfrg.com' }]
+license = 'Apache-2.0'
+requires-python = '>=3.8'
+dependencies = ['mkdocs', 'mkdocs-material', 'mkdocs-jupyter']
 
-[tool.poetry.dependencies]
-python = "^3.10"
-mkdocs = "^1.4.2"
-mkdocs-material = "^9.0.6"
-
-[tool.black]
-line_length = 79
-skip_string_normalization = true
-
-[tool.isort]
-ensure_newline_before_comments = true
-include_trailing_comma = true
-line_length = 79
-multi_line_output = 3
-profile = "black"
+[tool.hatch.envs.default]
+dependencies = [
+  # Linting
+  "black",
+  "flake8",
+  "isort",
+  "pip-tools",
+  "ruff",
+]
 
 [build-system]
-requires = [
-  "poetry-core>=1",
-  "setuptools",
-  "wheel"
-]
-build-backend = "poetry.core.masonry.api"
+requires = ['hatchling', 'hatch-fancy-pypi-readme>=22.5.0']
+build-backend = 'hatchling.build'
