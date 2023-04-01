@@ -1,4 +1,52 @@
-site_name: Google Ads by Daniel Rodriguez
+site_name: Google Ads API Notes
+site_url: https://ads.danielfrg.com
+site_author: Daniel Rodriguez
+site_description: >-
+  Notes on how I do use the Google Ads API
+# repo_url: https://github.com/danielfrg/ads.danielfrg.com
+copyright: Copyright &copy; 2023 Daniel Rodriguez
+
+nav:
+  - Python:
+      - Python Snippets: python/index.md
 
 theme:
   name: material
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - content.code.copy
+  palette:
+    - scheme: default
+      primary: deep orange
+      accent: deep orange
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - scheme: slate
+      primary: deep orange
+      accent: deep orange
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+
+markdown_extensions:
+  - admonition
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - pymdownx.snippets:
+      check_paths: true
+  - pymdownx.tabbed
+  - toc:
+      permalink: true
+
+plugins:
+  - search
+
+extra:
+  analytics:
+    provider: google
+    property: G-3673QMK9C4
