@@ -17,6 +17,7 @@ theme:
     - navigation.tracking
     - navigation.tabs
     - content.code.copy
+    - content.code.annotate
   palette:
     - scheme: default
       primary: deep orange
@@ -34,12 +35,16 @@ theme:
 
 markdown_extensions:
   - admonition
+  - attr_list
+  - md_in_html
+  - pymdownx.details
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
   - pymdownx.highlight:
       anchor_linenums: true
-  - pymdownx.superfences
-  - pymdownx.snippets:
-      check_paths: true
-  - pymdownx.tabbed
+  - pymdownx.tabbed:
+      alternate_style: true
   - toc:
       permalink: true
 
