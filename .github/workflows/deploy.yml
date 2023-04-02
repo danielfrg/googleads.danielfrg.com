@@ -6,8 +6,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  run:
-    name: Deploy website
+  deploy:
+    name: deploy
 
     permissions:
       contents: "read"
@@ -16,16 +16,15 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-latest]
-        python-version: ["3.10"]
+        python-version: ["3.11"]
 
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v3
+      - uses: arduino/setup-task@v1
 
       # ------------------------------------------------------------------------
-      # Python - Setup
 
       - name: Python - Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v4
